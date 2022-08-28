@@ -14,7 +14,9 @@ int main(void) {
 
     /*
     배열 value를 초기 상태로 만들기
-    for (i = 0; i < sizeof(value) / sizeof(value[0]); ++i) {
+    변수 i가 int형(유부호형)을 갖고 있는 반면 
+    sizeof는 size_t형(무부호형)의 값을 갖고 있기 때문
+    for (i = 0; i < (int) sizeof(value) / sizeof(value[0]); ++i) {
     a[i] = 0;
     }
     */
