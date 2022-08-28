@@ -16,5 +16,20 @@ int main(void)
     }
     printf("정수열의 합: %d\n", sum);
 
+
+    long ln;
+    long lsum = 0;
+
+    printf("본 프로그램은 long type 정수열의 합을 출력한다. \n");
+    printf("정수 여러개를 입력하라. (수열을 끝내려면 0을 입력하라.: ");
+
+    scanf("%ld", &ln);
+
+    while (n != 0) {
+        lsum += ln;
+        scanf("%ld", &ln);
+    }
+    printf("정수열의 합: %ld\n", lsum);
+
     return 0;
 }
