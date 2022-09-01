@@ -37,13 +37,14 @@ void write_line(void)
 {
     int extra_spaces = MAX_LINE_LEN - g_line_len;
     int space_to_insert = 0;
-
-    for (int i = 0; i < g_line_len; i++) {
+    int i = 0;
+    int j = 0;
+    for (i = 0; i < g_line_len; i++) {
         if (g_line[i] != ' ') {
             putchar(g_line[i]);
         } else {
             space_to_insert = extra_spaces / (g_num_words - 1);
-            for (int j = 1; j <= space_to_insert + 1; j++) {
+            for (j = 1; j <= space_to_insert + 1; j++) {
                 putchar(' ');
             }
             extra_spaces -= space_to_insert;

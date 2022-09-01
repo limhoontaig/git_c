@@ -7,6 +7,6 @@
  *            비워준다. 만약 단어의 길이가 len을 초과한다면       *
  *            잘라준다.                                     *
  **********************************************************/
-int read_word(char *word, int len);
+int read_word(char *out_word, int len);
 
 #endif

@@ -21,9 +21,9 @@ void read_word(char* out_word, int len) {
 
     while (ch != ' ' && ch != EOF) {
         if (pos < len) {
-            word[pos++] = ch;
+            out_word[pos++] = ch;
         }
         ch = read_char();
     }
-    word[pos] = '\0';
+    out_word[pos] = '\0';
 }
