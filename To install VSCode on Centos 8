@@ -1,0 +1,48 @@
+Centos 8에 Visual Studio Code를 설치하는 가장 쉽고 권장되는 방법입니다. 
+VS Code 저장소를 사용하도록 설정하고 VS Code 페케지를 설치합니다.
+
+Microsoft GPG 키를 가져옵니다.
+
+sudo rpm --import https://pckages.microsoft.com/keys/microsoft.asc
+
+텍스트 편집기를 열고 리포지토리 파일을 만듭니다.
+sudo vi /etc/yum.repos.d/vscode.repo
+
+다음 내용을 붙여 넣어 VS 코드 저장소를 사용하도록 설정합니다.
+
+# /etc/yum.repos.d/vdcode.repo
+
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+
+파일을 저장하고 텍스트 편집기를 닫습니다
+
+다음을 입력하여 Visual Studio Code의 최신버젼을 설치합니다.
+sudo dnf install code
+귀하의 Centos 기기에 Visual Studio Code가 설치되었으며 사용을 시작할 수 있습니다.
+
+Visual Studio Code를 시작
+이제 VS 코드가 Centos에 설치되었습니다. OS 시스템은 코드를 입력하거나 
+VS 코드 아이콘(Applications -> Programming -> Visual Studio Code)을
+클릭하여 명령줄에서 실행 할 수 있습니다.
+
+VS Code를 처음 실행하면 다음과 같은 초기화면이 나타납니다.
+Linux: Centos 8: Visual Studio Code 설치방법, 예제, 명령어
+이제 기본 설정에 따라 확장 설치 및 VS 코드 구성을 시작할 수 있습니다.
+
+Method of Visual Studio Code Update
+
+
+새 버전이 릴리스되면 데스크톱 표준 소프트웨어 엡데이트 도구를 사용하거나 터미널에서
+다음 명령을 실행하여  Visual Studio Code 페케지를 업데이트 할 수 있습니다.
+
+sudo dnf update
+
+Centos 8 머신에 VS 코드를 설치했습니다. 다음 단계는 추가 구성 요소를 설치하고 
+사용자 및 작업영역 설정을 사용자가 정의하는 것입니다.
+
+VS Code에 관한 자세한 내용은 공식 설명서 페이지를 참고하
