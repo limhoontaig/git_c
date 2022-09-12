@@ -30,9 +30,42 @@ nmcli connection down ens160 : network 비활성화 하기
 IP 고정하기
 vi /etc/sysconfig/network-scripts/ifcfg-ens160 : open config file using vim editor and edit below
 BOOTPROTO="dhcp" =lkj> BOOTPROTO="none"
-IPADDR="192.168.111.100"
+IPADDR="192.168.111.100"in
 NETMASK="255.255.255.0"
 GATEWAY="192.168.111.2"
 DNS1="192.168.111.2"
 
 cat /etc/hosts : host names
+
+vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
+TYPE="Ethernet"                              # 인터페이스 종류
+PROXY_METHOD="none"
+BROWSER_ONLY="no"
+BOOTPROTO="dhcp"                             # dhcp / static(none) 타입 설정
+DEFROUTE="yes"
+IPV4_FAILURE_FATAL="no"
+IPV6INIT="no"
+IPV6_AUTOCONF="yes"
+IPV6_DEFROUTE="yes"
+IPV6_FAILURE_FATAL="no"
+IPV6_ADDR_GEN_MODE="stable-privacy"
+NAME="ens3"
+UUID="8bd057e4-24e5-4834-9737-1a1107b053a3"
+DEVICE="ens3"                             # 인터페이스 장치 명
+ONBOOT="yes"                              # 부팅 / 네트워크 재시작 시 자동 활성화 여부
+
+Centos8 Software Update Procedure
+# gsettings set org.gnome.software download-updates false
+# systemctl disable dnf-makecache.service
+# systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
+# wget  https://download.hanbit.co.kr/centos/8/This.repo
+
+vi /etc/pam.d/gdm-paddwordwget
+
+일반사용자의 root 권한 사용 불가 코드
+vi /etc/pam.d/gdm-password 의 파일에 아래 코드를 추가 한다.
+auth        required      pam_succeed_if.so user  != root quiet
+# grub2-mkconfig -o /boot/grub2/grub.cfg
+
+vi /etc/gdm/custom.conf
+
