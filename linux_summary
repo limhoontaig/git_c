@@ -1,0 +1,38 @@
+This is linux command summary
+
+Network card summary
+Host PC IP 192.168.25.33
+DNS 210.220.163.82
+
+VMWARE Network Configulation
+GATEWAY and DNS Server IP 192.168.111.2
+DHCP Server IP 192.168.111.254
+
+Server(Linux) IP 192.168.111.100
+Server(B) (Linux) IP 192.168.111.200
+Cilent (Linux) IP 자동아이피
+Win Client IP 자동아이피
+
+To setting up of Telnet Server
+1. # dnf install -y telnet-server : Server에 Telnet server program  설치하기
+2. # systemctl start telnet.socket : Server에서 Telnet 기동하기
+3. # adduser user name (limht) passwd password : Telnet 사용자 및 비밀번호 생성하기
+4. # firewall-config : 방화벽 열기 (방화벽 써버 public에서 텔넷 사용하기 크릭하여 설정하기)
+     (firewall package 설치)
+5. # systemctl enable telnet.socket (telnet server를 전원켬과 동시에 켜기)
+6. # 크라이언트에서 텔넷 접속하기 c:/>telnet 192.168.111.100 (telnet server IP)
+
+Server 고정 IP 사용하기
+nmcli connection up ens160 : network 활성화하기
+연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/3)
+nmcli connection down ens160 : network 비활성화 하기
+연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/4)
+IP 고정하기
+vi /etc/sysconfig/network-scripts/ifcfg-ens160 : open config file using vim editor and edit below
+BOOTPROTO="dhcp" =lkj> BOOTPROTO="none"
+IPADDR="192.168.111.100"
+NETMASK="255.255.255.0"
+GATEWAY="192.168.111.2"
+DNS1="192.168.111.2"
+
+cat /etc/hosts : host names
