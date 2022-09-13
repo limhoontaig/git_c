@@ -11,7 +11,7 @@
 #### # shutdown -k +10 : shutdown message만 보내고 실제는 꺼지지 않음 (사용자가 너무 많을때 일시적 로그아웃 유도함)
 
 # 사용자 변경 등 로그아웃 방법
-## # or $ logout or exit
+## '# or $ logout or exit
 
 # Network card summary
 ### Host PC IP 192.168.25.33
@@ -27,13 +27,13 @@
 ### Win Client IP 자동아이피
 
 # To setting up of Telnet Server
-1. # dnf install -y telnet-server : Server에 Telnet server program  설치하기
-2. # systemctl start telnet.socket : Server에서 Telnet 기동하기
-3. # adduser user name (limht) passwd password : Telnet 사용자 및 비밀번호 생성하기
-4. # firewall-config : 방화벽 열기 (방화벽 써버 public에서 텔넷 사용하기 크릭하여 설정하기)
+1. '# dnf install -y telnet-server : Server에 Telnet server program  설치하기
+2. '# systemctl start telnet.socket : Server에서 Telnet 기동하기
+3. '# adduser user name (limht) passwd password : Telnet 사용자 및 비밀번호 생성하기
+4. '# firewall-config : 방화벽 열기 (방화벽 써버 public에서 텔넷 사용하기 크릭하여 설정하기)
      (firewall package 설치)
-5. # systemctl enable telnet.socket (telnet server를 전원켬과 동시에 켜기)
-6. # 크라이언트에서 텔넷 접속하기 c:/>telnet 192.168.111.100 (telnet server IP)
+5. '# systemctl enable telnet.socket (telnet server를 전원켬과 동시에 켜기)
+6. '# 크라이언트에서 텔넷 접속하기 c:/>telnet 192.168.111.100 (telnet server IP)
 
 # Server 고정 IP 사용하기
 1. nmcli connection up ens160 : network 활성화하기
@@ -82,7 +82,8 @@
 
 # vi /etc/gdm/custom.conf
 
-# Linux Commands frequently used by Linux Sysadmins – Part 1:
+# Linux Commands frequently used by Linux 
+## Sysadmins – Part 1:
 1. ip – from Iproute2, a collection of utilities for controlling TCP/IP networking and traffic control in Linux.
 2. ls – list directory contents.
 3. df – display disk space usage.
@@ -190,7 +191,7 @@
 95. btop – C++ vers6ion and continuation of bashtop and bpytop.
 96. nload – a super simple, command-line network interface monitoring tool.
 
-# This list of Linux Networking commands and scripts will receive ongoing updates:
+## This list of Linux Networking commands and scripts will receive ongoing updates:
 
 1. aria2 – downloading just about everything. Torrents included.
 2. arpwatch – Ethernet Activity Monitor.
