@@ -1,10 +1,10 @@
-#This is linux command summary
+# This is linux command summary
 
-##Server power command
-##Server 종료하는법 : root권한이 있어야 됨(# mode)
+## Server power command
+## Server 종료하는법 : root권한이 있어야 됨(# mode)
 ## shutdown - P now or # halt - P or # init 0 : 3가지 방법이 있음
 
-##Server rebooting (껏다가 자동으로 켜지는 방법)
+## Server rebooting (껏다가 자동으로 켜지는 방법)
 ### # shutdown -r now or # reboot or # init 6
 ### # shutdown -h +10 : 10분 후에 써버가 꺼짐(사용자에게 통보함)
 ### # shutdown -c : shutdown 계획 취소 함
