@@ -50,27 +50,27 @@
 
 # cat /etc/hosts : host names
 
-. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
-. TYPE="Ethernet"                              # 인터페이스 종류
-. PROXY_METHOD="none"
-BROWSER_ONLY="no"
-BOOTPROTO="dhcp"                             # dhcp / static(none) 타입 설정
-DEFROUTE="yes"
-IPV4_FAILURE_FATAL="no"
-IPV6INIT="no"
-IPV6_AUTOCONF="yes"
-IPV6_DEFROUTE="yes"
-IPV6_FAILURE_FATAL="no"
-IPV6_ADDR_GEN_MODE="stable-privacy"
-NAME="ens3"
-UUID="8bd057e4-24e5-4834-9737-1a1107b053a3"
-DEVICE="ens3"                             # 인터페이스 장치 명
-ONBOOT="yes"                              # 부팅 / 네트워크 재시작 시 자동 활성화 여부
+1. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
+2. TYPE="Ethernet"                              # 인터페이스 종류
+3. PROXY_METHOD="none"
+4. BROWSER_ONLY="no"
+5. BOOTPROTO="dhcp"                             # dhcp / static(none) 타입 설정
+6. DEFROUTE="yes"
+7. IPV4_FAILURE_FATAL="no"
+8. IPV6INIT="no"
+9. 0IPV6_AUTOCONF="yes"
+10. IPV6_DEFROUTE="yes"
+11. IPV6_FAILURE_FATAL="no"
+12. IPV6_ADDR_GEN_MODE="stable-privacy"
+13. NAME="ens3"
+14. UUID="8bd057e4-24e5-4834-9737-1a1107b053a3"
+15. DEVICE="ens3"                             # 인터페이스 장치 명
+16. ONBOOT="yes"                              # 부팅 / 네트워크 재시작 시 자동 활성화 여부
 
-Centos8 Software Update Procedure
-# gsettings set org.gnome.software download-updates false
-# systemctl disable dnf-makecache.service
-# systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
+# Centos8 Software Update Procedure
+### gsettings set org.gnome.software download-updates false
+### systemctl disable dnf-makecache.service
+### systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
 # wget  https://download.hanbit.co.kr/centos/8/This.repo
 
 # vi /etc/pam.d/gdm-paddwordwget
@@ -92,11 +92,11 @@ Centos8 Software Update Procedure
 7. find – locates files based on some user-specified criteria.
 8. ncdu – a disk utility for Unix systems.
 9. pstree – display a tree of processes.
-10. 11. last – show a listing of last logged-in users.
-12. w – show a list of currently logged-in user sessions.
-13. grep – Search a file for a pattern of characters, then display all matching lines.
+10. last – show a listing of last logged-in users.
+11. w – show a list of currently logged-in user sessions.
+12. grep – Search a file for a pattern of characters, then display all matching lines.
 
-Linux Commands frequently used by Linux Sysadmins – Part 2:
+## Linux Commands frequently used by Linux Sysadmins – Part 2:
 13. uptime – shows system uptime and load average.
 14. top – shows an overall system view.
 15. vmstat – shows system memory, processes, interrupts, paging, block I/O, and CPU info.
@@ -122,7 +122,7 @@ Linux Commands frequently used by Linux Sysadmins – Part 2:
 35. man – for reading system reference manuals.
 36. apropos – Search man page names and descriptions.
 
-Linux Commands frequently used by Linux Sysadmins – Part 3:
+## Linux Commands frequently used by Linux Sysadmins – Part 3:
 37. rsync – remote file transfers and syncing.
 38. tar – an archiving utility.
 39. gzip – file compression and decompression.
@@ -140,7 +140,7 @@ Linux Commands frequently used by Linux Sysadmins – Part 3:
 51. host – perform DNS lookups in Linux.
 52. dig – DNS lookup utility.
 
-Linux Commands frequently used by Linux Sysadmins – Part 4:
+## Linux Commands frequently used by Linux Sysadmins – Part 4:
 53. wget – retrieve files over HTTP, HTTPS, FTP, and FTPS.
 54. curl – transferring data using various network protocols. (supports more protocols than wget)
 55. dd – convert and copy files.
@@ -159,7 +159,7 @@ Linux Commands frequently used by Linux Sysadmins – Part 4:
 68. userdel – used to delete a user account and all related files.
 69. usermod – used to modify or change any attributes of an existing user account.
 
-Linux Commands frequently used by Linux Sysadmins – Part 5:
+## Linux Commands frequently used by Linux Sysadmins – Part 5:
 70. vi – text editor.
 71. cat – display file contents.
 72. tac – output file contents, in reverse.
@@ -182,74 +182,74 @@ Linux Commands frequently used by Linux Sysadmins – Part 5:
 89. clear – clears the screen of the terminal.
 90. env -Run a command in a modified environment.
 
-Misc commands:
+## Misc commands:
 91. cheat – allows you to create and view interactive cheatsheets on the command-line.”
 92. tldr – Collaborative cheatsheets for console commands.
 93. bashtop – the ‘cool’ top alternative.
 94. bpytop – Python port of bashtop.
-95. btop – C++ version and continuation of bashtop and bpytop.
+95. btop – C++ vers6ion and continuation of bashtop and bpytop.
 96. nload – a super simple, command-line network interface monitoring tool.
 
-This list of Linux Networking commands and scripts will receive ongoing updates:
+# This list of Linux Networking commands and scripts will receive ongoing updates:
 
-aria2 – downloading just about everything. Torrents included.
-arpwatch – Ethernet Activity Monitor.
-bmon – bandwidth monitor and rate estimator.
-bwm-ng – live network bandwidth monitor.
-curl – transferring data with URLs. (or try httpie)
-darkstat – captures network traffic, usage statistics.
-dhclient – Dynamic Host Configuration Protocol Client
-dig – query DNS servers for information.
-dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat.
-ethtool – utility for controlling network drivers and hardware.
-gated – gateway routing daemon.
-host – DNS lookup utility.
-hping – TCP/IP packet assembler/analyzer.
-ibmonitor – shows bandwidth and total data transferred.
-ifstat –  report network interfaces bandwidth.
-iftop – display bandwidth usage.
-ip (PDF file) – a command with more features that ifconfig (net-tools).
-iperf3 – network bandwidth measurement tool. (above screenshot Stacklinux VPS)
-iproute2 – collection of utilities for controlling TCP/IP.
-iptables – take control of network traffic.
-IPTraf – An IP Network Monitor.
-iputils – set of small useful utilities for Linux networking.
-iw – a new nl80211 based CLI configuration utility for wireless devices.
-jwhois (whois) – client for the whois service.
-“lsof -i” – reveal information about your network sockets.
-mtr – network diagnostic tool.
-net-tools – utilities include: arp, hostname, ifconfig, netstat, rarp, route, plipconfig, slattach, mii-tool, iptunnel and ipmaddr.
-ncat – improved re-implementation of the venerable netcat.
-netcat – networking utility for reading/writing network connections.
-nethogs – a small ‘net top’ tool.
-Netperf – Network bandwidth Testing.
-netplan – Netplan is a utility for easily configuring networking on a linux system.
-netsniff-ng – Swiss army knife for daily Linux network plumbing.
-netwatch – monitoring Network Connections.
-ngrep – grep applied to the network layer.
-nload – display network usage.
-nmap – network discovery and security auditing.
-nmcli – a command-line tool for controlling NetworkManager and reporting network status.
-nmtui – provides a text interface to configure networking by controlling NetworkManager.
-nslookup – query Internet name servers interactively.
-ping – send icmp echo_request to network hosts.
-route – show / manipulate the IP routing table.
-slurm – network load monitor.
-snort – Network Intrusion Detection and Prevention System.
-smokeping –  keeps track of your network latency.
-socat – establishes two bidirectional byte streams and transfers data between them.
-speedometer – Measure and display the rate of data across a network.
-speedtest-cli – test internet bandwidth using speedtest.net
-ss – utility to investigate sockets.
-ssh –  secure system administration and file transfers over insecure networks.
-tcpdump – command-line packet analyzer.
-tcptrack – Displays information about tcp connections on a network interface.
-telnet – user interface to the TELNET protocol.
-tracepath – very similar function to traceroute.
-traceroute – print the route packets trace to network host.
-vnStat – network traffic monitor.
-websocat – Connection forwarder from/to web sockets to/from usual sockets, in style of socat.
-wget –  retrieving files using HTTP, HTTPS, FTP and FTPS.
-Wireless Tools for Linux – includes iwconfig, iwlist, iwspy, iwpriv and ifrename.
-Wireshark – network protocol analyzer.
-Suggestions welcomed.
+1. aria2 – downloading just about everything. Torrents included.
+2. arpwatch – Ethernet Activity Monitor.
+3. bmon – bandwidth monitor and rate estimator.
+4. bwm-ng – live network bandwidth monitor.
+5. curl – transferring data with URLs. (or try httpie)
+6. darkstat – captures network traffic, usage statistics.
+7. dhclient – Dynamic Host Configuration Protocol Client
+8. dig – query DNS servers for information.
+9. dstat – replacement for vmstat, iostat, mpstat, netstat and ifstat.
+10. ethtool – utility for controlling network drivers and hardware.
+11. gated – gateway routing daemon.
+12. host – DNS lookup utility.
+13. hping – TCP/IP packet assembler/analyzer.
+14. ibmonitor – shows bandwidth and total data transferred.
+15. ifstat –  report network interfaces bandwidth.
+16. iftop – display bandwidth usage.
+17. ip (PDF file) – a command with more features that ifconfig (net-tools).
+18. iperf3 – network bandwidth measurement tool. (above screenshot Stacklinux VPS)
+19. iproute2 – collection of utilities for controlling TCP/IP.
+20. iptables – take control of network traffic.
+21. IPTraf – An IP Network Monitor.
+22. iputils – set of small useful utilities for Linux networking.
+23. iw – a new nl80211 based CLI configuration utility for wireless devices.
+24. jwhois (whois) – client for the whois service.
+25. “lsof -i” – reveal information about your network sockets.
+26. mtr – network diagnostic tool.
+27. net-tools – utilities include: arp, hostname, ifconfig, netstat, rarp, route, plipconfig, slattach, mii-tool, iptunnel and ipmaddr.
+28. ncat – improved re-implementation of the venerable netcat.
+29. netcat – networking utility for reading/writing network connections.
+30. nethogs – a small ‘net top’ tool.
+31. Netperf – Network bandwidth Testing.
+32. netplan – Netplan is a utility for easily configuring networking on a linux system.
+33. netsniff-ng – Swiss army knife for daily Linux network plumbing.
+34. netwatch – monitoring Network Connections.
+35. ngrep – grep applied to the network layer.
+36. nload – display network usage.
+37. nmap – network discovery and security auditing.
+38. nmcli – a command-line tool for controlling NetworkManager and reporting network status.
+39. nmtui – provides a text interface to configure networking by controlling NetworkManager.
+40. nslookup – query Internet name servers interactively.
+41. ping – send icmp echo_request to network hosts.
+42. route – show / manipulate the IP routing table.
+43. slurm – network load monitor.
+44. snort – Network Intrusion Detection and Prevention System.
+45. smokeping –  keeps track of your network latency.
+46. socat – establishes two bidirectional byte streams and transfers data between them.
+47. speedometer – Measure and display the rate of data across a network.
+48. speedtest-cli – test internet bandwidth using speedtest.net
+49. ss – utility to investigate sockets.
+50. ssh –  secure system administration and file transfers over insecure networks.
+51. tcpdump – command-line packet analyzer.
+52. tcptrack – Displays information about tcp connections on a network interface.
+53. telnet – user interface to the TELNET protocol.
+54. tracepath – very similar function to traceroute.
+55. traceroute – print the route packets trace to network host.
+56. vnStat – network traffic monitor.
+57. websocat – Connection forwarder from/to web sockets to/from usual sockets, in style of socat.
+58. wget –  retrieving files using HTTP, HTTPS, FTP and FTPS.
+59. Wireless Tools for Linux – includes iwconfig, iwlist, iwspy, iwpriv and ifrename.
+60. Wireshark – network protocol analyzer.
+61. Suggestions welcomed.
