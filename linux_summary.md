@@ -73,16 +73,16 @@ Centos8 Software Update Procedure
 # systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
 # wget  https://download.hanbit.co.kr/centos/8/This.repo
 
-vi /etc/pam.d/gdm-paddwordwget
+# vi /etc/pam.d/gdm-paddwordwget
 
-일반사용자의 root 권한 사용 불가 코드
-vi /etc/pam.d/gdm-password 의 파일에 아래 코드를 추가 한다.
-auth        required      pam_succeed_if.so user  != root quiet
+#### 일반사용자의 root 권한 사용 불가 코드
+#### vi /etc/pam.d/gdm-password 의 파일에 아래 코드를 추가 한다.
+#### auth        required      pam_succeed_if.so user  != root quiet
 # grub2-mkconfig -o /boot/grub2/grub.cfg
 
-vi /etc/gdm/custom.conf
+# vi /etc/gdm/custom.conf
 
-Linux Commands frequently used by Linux Sysadmins – Part 1:
+# Linux Commands frequently used by Linux Sysadmins – Part 1:
 1. ip – from Iproute2, a collection of utilities for controlling TCP/IP networking and traffic control in Linux.
 2. ls – list directory contents.
 3. df – display disk space usage.
@@ -92,9 +92,9 @@ Linux Commands frequently used by Linux Sysadmins – Part 1:
 7. find – locates files based on some user-specified criteria.
 8. ncdu – a disk utility for Unix systems.
 9. pstree – display a tree of processes.
-10. last – show a listing of last logged-in users.
-11. w – show a list of currently logged-in user sessions.
-12. grep – Search a file for a pattern of characters, then display all matching lines.
+10. 11. last – show a listing of last logged-in users.
+12. w – show a list of currently logged-in user sessions.
+13. grep – Search a file for a pattern of characters, then display all matching lines.
 
 Linux Commands frequently used by Linux Sysadmins – Part 2:
 13. uptime – shows system uptime and load average.
