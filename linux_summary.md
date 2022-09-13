@@ -11,7 +11,7 @@
 ### # shutdown -k +10 : shutdown message만 보내고 실제는 꺼지지 않음 (사용자가 너무 많을때 일시적 로그아웃 유도함)
 
 사용자 변경 등 로그아웃 방법
-# or $ logout or exit
+# # or $ logout or exit
 
 
 
