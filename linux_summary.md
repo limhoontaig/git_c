@@ -10,27 +10,23 @@
 #### # shutdown -c : shutdown 계획 취소 함
 #### # shutdown -k +10 : shutdown message만 보내고 실제는 꺼지지 않음 (사용자가 너무 많을때 일시적 로그아웃 유도함)
 
-사용자 변경 등 로그아웃 방법
-# # or $ logout or exit
+# 사용자 변경 등 로그아웃 방법
+## # or $ logout or exit
 
+# Network card summary
+### Host PC IP 192.168.25.33
+### DNS 210.220.163.82
 
+# VMWARE Network Configulation
+### GATEWAY and DNS Server IP 192.168.111.2
+### DHCP Server IP 192.168.111.254
 
+### Server(Linux) IP 192.168.111.100
+### Server(B) (Linux) IP 192.168.111.200
+### Cilent (Linux) IP 자동아이피
+### Win Client IP 자동아이피
 
-
-Network card summary
-Host PC IP 192.168.25.33
-DNS 210.220.163.82
-
-VMWARE Network Configulation
-GATEWAY and DNS Server IP 192.168.111.2
-DHCP Server IP 192.168.111.254
-
-Server(Linux) IP 192.168.111.100
-Server(B) (Linux) IP 192.168.111.200
-Cilent (Linux) IP 자동아이피
-Win Client IP 자동아이피
-
-To setting up of Telnet Server
+# To setting up of Telnet Server
 1. # dnf install -y telnet-server : Server에 Telnet server program  설치하기
 2. # systemctl start telnet.socket : Server에서 Telnet 기동하기
 3. # adduser user name (limht) passwd password : Telnet 사용자 및 비밀번호 생성하기
@@ -39,24 +35,24 @@ To setting up of Telnet Server
 5. # systemctl enable telnet.socket (telnet server를 전원켬과 동시에 켜기)
 6. # 크라이언트에서 텔넷 접속하기 c:/>telnet 192.168.111.100 (telnet server IP)
 
-Server 고정 IP 사용하기
-nmcli connection up ens160 : network 활성화하기
-연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/3)
-nmcli connection down ens160 : network 비활성화 하기
-연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/4)
-IP 고정하기
-vi /etc/sysconfig/network-scripts/ifcfg-ens160 : open config file using vim editor and edit below
-BOOTPROTO="dhcp" =lkj> BOOTPROTO="none"
-IPADDR="192.168.111.100"in
-NETMASK="255.255.255.0"
-GATEWAY="192.168.111.2"
-DNS1="192.168.111.2"
+# Server 고정 IP 사용하기
+1. nmcli connection up ens160 : network 활성화하기
+2. 연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/3)
+3. nmcli connection down ens160 : network 비활성화 하기
+4. 연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/4)
+# IP 고정하기
+1. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : open config file using vim editor and edit below
+2. BOOTPROTO="dhcp" =lkj> BOOTPROTO="none"
+3. IPADDR="192.168.111.100"in
+4. NETMASK="255.255.255.0"
+5. GATEWAY="192.168.111.2"
+6. DNS1="192.168.111.2"
 
-cat /etc/hosts : host names
+# cat /etc/hosts : host names
 
-vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
-TYPE="Ethernet"                              # 인터페이스 종류
-PROXY_METHOD="none"
+. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
+. TYPE="Ethernet"                              # 인터페이스 종류
+. PROXY_METHOD="none"
 BROWSER_ONLY="no"
 BOOTPROTO="dhcp"                             # dhcp / static(none) 타입 설정
 DEFROUTE="yes"
