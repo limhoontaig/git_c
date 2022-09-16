@@ -1,8 +1,8 @@
 # This is linux command summary
 
 ## Server power command
-### Server 종료하는법 : root권한이 있어야 됨(# mode)
-### shutdown - P now or # halt - P or # init 0 : 3가지 방법이 있음
+#### Server 종료하는법 : root권한이 있어야 됨(# mode)
+#### shutdown - P now or # halt - P or # init 0 : 3가지 방법이 있음
 
 ## Server rebooting (껏다가 자동으로 켜지는 방법)
 #### # shutdown -r now or # reboot or # init 6
@@ -11,7 +11,7 @@
 #### # shutdown -k +10 : shutdown message만 보내고 실제는 꺼지지 않음 (사용자가 너무 많을때 일시적 로그아웃 유도함)
 
 # 사용자 변경 등 로그아웃 방법
-## '# or $ logout or exit
+### '# or $ logout or exit
 
 # Network card summary
 ### Host PC IP 192.168.25.33
@@ -26,7 +26,7 @@
 ### Cilent (Linux) IP 자동아이피
 ### Win Client IP 자동아이피
 
-# To setting up of Telnet Server
+## To setting up of Telnet Server
 1. '# dnf install -y telnet-server : Server에 Telnet server program  설치하기
 2. '# systemctl start telnet.socket : Server에서 Telnet 기동하기
 3. '# adduser user name (limht) passwd password : Telnet 사용자 및 비밀번호 생성하기
@@ -35,12 +35,12 @@
 5. '# systemctl enable telnet.socket (telnet server를 전원켬과 동시에 켜기)
 6. '# 크라이언트에서 텔넷 접속하기 c:/>telnet 192.168.111.100 (telnet server IP)
 
-# Server 고정 IP 사용하기
+## Server 고정 IP 사용하기
 1. nmcli connection up ens160 : network 활성화하기
 2. 연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/3)
 3. nmcli connection down ens160 : network 비활성화 하기
 4. 연결이 성공적으로 활성화되었습니다 (D-버스 활성 경로: /org/freedesktop/NetworkManager/ActiveConnection/4)
-# IP 고정하기
+## IP 고정하기
 1. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : open config file using vim editor and edit below
 2. BOOTPROTO="dhcp" =lkj> BOOTPROTO="none"
 3. IPADDR="192.168.111.100"in
@@ -48,7 +48,7 @@
 5. GATEWAY="192.168.111.2"
 6. DNS1="192.168.111.2"
 
-# cat /etc/hosts : host names
+## cat /etc/hosts : host names
 
 1. vi /etc/sysconfig/network-scripts/ifcfg-ens160 : network config file
 2. TYPE="Ethernet"                              # 인터페이스 종류
@@ -67,23 +67,23 @@
 15. DEVICE="ens3"                             # 인터페이스 장치 명
 16. ONBOOT="yes"                              # 부팅 / 네트워크 재시작 시 자동 활성화 여부
 
-# Centos8 Software Update Procedure
-### gsettings set org.gnome.software download-updates false
-### systemctl disable dnf-makecache.service
-### systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
-# wget  https://download.hanbit.co.kr/centos/8/This.repo
+## Centos8 Software Update Procedure
+#### gsettings set org.gnome.software download-updates false
+#### systemctl disable dnf-makecache.service
+#### systemctl disable dnf-makecache.timer Removed /etc/systemd/system/multi-user.target.wants/dnf-makecache.timer
+#### wget  https://download.hanbit.co.kr/centos/8/This.repo
 
-# vi /etc/pam.d/gdm-paddwordwget
+## vi /etc/pam.d/gdm-paddwordwget
 
 #### 일반사용자의 root 권한 사용 불가 코드
 #### vi /etc/pam.d/gdm-password 의 파일에 아래 코드를 추가 한다.
 #### auth        required      pam_succeed_if.so user  != root quiet
-# grub2-mkconfig -o /boot/grub2/grub.cfg
+## grub2-mkconfig -o /boot/grub2/grub.cfg
 
-# vi /etc/gdm/custom.conf
+## vi /etc/gdm/custom.conf
 
-# Linux Commands frequently used by Linux 
-## Sysadmins – Part 1:
+## Linux Commands frequently used by Linux 
+### Sysadmins – Part 1:
 1. ip – from Iproute2, a collection of utilities for controlling TCP/IP networking and traffic control in Linux.
 2. ls – list directory contents.
 3. df – display disk space usage.
@@ -97,7 +97,7 @@
 11. w – show a list of currently logged-in user sessions.
 12. grep – Search a file for a pattern of characters, then display all matching lines.
 
-## Linux Commands frequently used by Linux Sysadmins – Part 2:
+### Linux Commands frequently used by Linux Sysadmins – Part 2:
 13. uptime – shows system uptime and load average.
 14. top – shows an overall system view.
 15. vmstat – shows system memory, processes, interrupts, paging, block I/O, and CPU info.
@@ -123,7 +123,7 @@
 35. man – for reading system reference manuals.
 36. apropos – Search man page names and descriptions.
 
-## Linux Commands frequently used by Linux Sysadmins – Part 3:
+### Linux Commands frequently used by Linux Sysadmins – Part 3:
 37. rsync – remote file transfers and syncing.
 38. tar – an archiving utility.
 39. gzip – file compression and decompression.
@@ -141,7 +141,7 @@
 51. host – perform DNS lookups in Linux.
 52. dig – DNS lookup utility.
 
-## Linux Commands frequently used by Linux Sysadmins – Part 4:
+### Linux Commands frequently used by Linux Sysadmins – Part 4:
 53. wget – retrieve files over HTTP, HTTPS, FTP, and FTPS.
 54. curl – transferring data using various network protocols. (supports more protocols than wget)
 55. dd – convert and copy files.
@@ -160,7 +160,7 @@
 68. userdel – used to delete a user account and all related files.
 69. usermod – used to modify or change any attributes of an existing user account.
 
-## Linux Commands frequently used by Linux Sysadmins – Part 5:
+### Linux Commands frequently used by Linux Sysadmins – Part 5:
 70. vi – text editor.
 71. cat – display file contents.
 72. tac – output file contents, in reverse.
@@ -183,7 +183,7 @@
 89. clear – clears the screen of the terminal.
 90. env -Run a command in a modified environment.
 
-## Misc commands:
+### Misc commands:
 91. cheat – allows you to create and view interactive cheatsheets on the command-line.”
 92. tldr – Collaborative cheatsheets for console commands.
 93. bashtop – the ‘cool’ top alternative.
@@ -191,7 +191,7 @@
 95. btop – C++ vers6ion and continuation of bashtop and bpytop.
 96. nload – a super simple, command-line network interface monitoring tool.
 
-## This list of Linux Networking commands and scripts will receive ongoing updates:
+### This list of Linux Networking commands and scripts will receive ongoing updates:
 
 1. aria2 – downloading just about everything. Torrents included.
 2. arpwatch – Ethernet Activity Monitor.
