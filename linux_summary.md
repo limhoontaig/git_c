@@ -11,20 +11,20 @@
 #### # shutdown -k +10 : shutdown message만 보내고 실제는 꺼지지 않음 (사용자가 너무 많을때 일시적 로그아웃 유도함)
 
 # 사용자 변경 등 로그아웃 방법
-### '# or $ logout or exit
+## '# or $ logout or exit
 
-# Network card summary
-### Host PC IP 192.168.25.33
-### DNS 210.220.163.82
+## Network card summary
+#### Host PC IP 192.168.25.33
+#### DNS 210.220.163.82
 
-# VMWARE Network Configulation
-### GATEWAY and DNS Server IP 192.168.111.2
-### DHCP Server IP 192.168.111.254
+## VMWARE Network Configulation
+#### GATEWAY and DNS Server IP 192.168.111.2
+#### DHCP Server IP 192.168.111.254
 
-### Server(Linux) IP 192.168.111.100
-### Server(B) (Linux) IP 192.168.111.200
-### Cilent (Linux) IP 자동아이피
-### Win Client IP 자동아이피
+#### Server(Linux) IP 192.168.111.100
+#### Server(B) (Linux) IP 192.168.111.200
+#### Cilent (Linux) IP 자동아이피
+#### Win Client IP 자동아이피
 
 ## To setting up of Telnet Server
 1. '# dnf install -y telnet-server : Server에 Telnet server program  설치하기
@@ -78,7 +78,7 @@
 #### 일반사용자의 root 권한 사용 불가 코드
 #### vi /etc/pam.d/gdm-password 의 파일에 아래 코드를 추가 한다.
 #### auth        required      pam_succeed_if.so user  != root quiet
-## grub2-mkconfig -o /boot/grub2/grub.cfg
+# grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ## vi /etc/gdm/custom.conf
 
