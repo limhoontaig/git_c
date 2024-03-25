@@ -15,6 +15,7 @@
 # Precompiled Headers
 *.gch
 *.pch
+*.ipch
 
 # Libraries
 *.lib
@@ -41,6 +42,11 @@
 *.su
 *.idb
 *.pdb
+*.lock
+*.suo
+*.db
+*.sqlite
+*.vsidx
 
 # Kernel Module Compile Results
 *.mod*
@@ -54,3 +60,4 @@ Footer
 
 .vscode/*.json
 *.out
+*.json
